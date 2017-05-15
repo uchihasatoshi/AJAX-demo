@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX demo</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        ol{list-style: none;}
+        #container img{width: 270px}
+        #container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 840px;
+        }
+    </style>
+</head>
+<body>
+    <ol id="container">
+        <!--放请求的图片-->
+    </ol>
+    <button id="btn">加载</button>
+    <script>
+        var  page = 1;
+        btn.onclick = function(){
+            var request = new XMLHttpRequest();
+            request.open('GET','/page' + page + '.json');
+            request.onload = function(){
+                page += 1;
+                let object = JSON.parse(request.responseText);
+                console.log(object);
+                let hasNextPage = object.hasNextPage;
+                console.log(hasNextPage);
+                if(!hasNextPage){
+                    btn.disabled = true;
+                }
+                let array = object.items;
+                array.forEach(function(item, index){
+                    let li = document.createElement('li');
+                    let img = document.createElement('img');
+                    li.appendChild(img);
+                    img.src = item.url;
+                    container.appendChild(li);
+                })
+            }
+            request.send();
+        }
+    </script>
+</body>
+</html>
