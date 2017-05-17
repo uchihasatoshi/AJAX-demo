@@ -26,23 +26,23 @@ var server = http.createServer(function(request, response){
     response.setHeader('Content-Type', 'application/javascript')
     response.end(string)
   }else if(path === '/page1.json'){
-    var string = fs.readFileSync('./page1.json')
+    var string = fs.readFileSync('http://www.animepc.me/AJAX-demo/page1.json')
     response.setHeader('Content-Type', 'application/json')
     response.end(string)
   }else if(path === '/page2.json'){
-    var string = fs.readFileSync('./page2.json')
+    var string = fs.readFileSync('http://www.animepc.me/AJAX-demo/page2.json')
     response.setHeader('Content-Type', 'application/json')
     response.end(string)
   }else if(path === '/page3.json'){
-    var string = fs.readFileSync('./page3.json')
+    var string = fs.readFileSync('http://www.animepc.me/AJAX-demo/page3.json')
     response.setHeader('Content-Type', 'application/json')
     response.end(string)
   }else if(path === '/page4.json'){
-    var string = fs.readFileSync('./page4.json')
+    var string = fs.readFileSync('http://www.animepc.me/AJAX-demo/page4.json')
     response.setHeader('Content-Type', 'application/json')
     response.end(string)
   }else if(path === '/page5.json'){
-    var string = fs.readFileSync('./page5.json')
+    var string = fs.readFileSync('http://www.animepc.me/AJAX-demo/page5.json')
     response.setHeader('Content-Type', 'application/json')
     response.end(string)
   }else{  
