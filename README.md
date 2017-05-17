@@ -2,7 +2,7 @@
 
 ## 预览链接
 
-
+ http://www.animepc.me/AJAX-demo
 
 ## 功能描述
 点击 加载 按钮，加载第一页图片；
